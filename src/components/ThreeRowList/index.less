@@ -1,0 +1,29 @@
+.threeRowList {
+  margin-top: 40px;
+  & > .listHeader {
+    padding: 0 16px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    & > .title {
+      height: 30px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+  & > .itemContext {
+    padding: 0 0 0 12px;
+    width: 360px;
+    box-sizing: border-box;
+    .wrapper {
+      overflow: hidden;
+    }
+    .context {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+  }
+}

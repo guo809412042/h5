@@ -1,0 +1,44 @@
+.musicItemWrapper {
+  width: 336px;
+  display: flex;
+  align-items: center;
+  & > .itemLeftView {
+    padding: 8px 4px;
+    & > .audioWrapper {
+      width: 68px;
+      height: 68px;
+      border-radius: 6px;
+      background-color: steelblue;
+      position: relative;
+      & > .play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        height: 16px;
+        border-radius: 2px;
+        color: white;
+        text-align: center;
+        line-height: 16px;
+      }
+    }
+  }
+  & > .itemRightView {
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    & > .title {
+      margin-bottom: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #333;
+    }
+    & > .text {
+      font-size: 12px;
+      line-height: 16px;
+      color: #ccc;
+    }
+  }
+}
