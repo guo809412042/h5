@@ -1,14 +1,32 @@
-import React from "react";
+import React,{ useEffect, useState } from "react";
 import styles from "./index.less";
 function Index() {
+  const [isPlay, setIsPlay] = useState(false);
+  useEffect(() => {
+    
+  })
+  const handleClick = () => {
+    setIsPlay(!isPlay);
+    const mp4 = document.getElementById('video');
+    // 如果是播放状态的话
+    if(isPlay){
+      // 暂停
+      mp4.pause();
+    }else{
+      // 继续播放
+      mp4.play();
+    }
+  }
   return (
     <div className={styles.headerVideoViewWrapper}>
       <div className={styles.videoViewWrapper}>
-        <div className={styles.videoWrapper}>
-          <video src="../1111.mp4" controls="controls"></video>
-          {/* <div className={styles.playIcon}>
+        <div className={styles.videoWrapper} onClick={handleClick}>
+          <video src="../1111.mp4" id="video"
+              webkit-playsinline="true" playsInline={true} x5-playsinline=""
+          ></video>
+          {!isPlay ? <div className={styles.playIcon}>
             <span className="iconfont icon-bofang"></span>
-          </div> */}
+          </div> : ""}
         </div>
         <div className={styles.gradientDIV}></div>
       </div>

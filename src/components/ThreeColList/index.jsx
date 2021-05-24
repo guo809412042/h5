@@ -40,6 +40,8 @@ function Index(props) {
     new BetterScroll(wrapper.current, {
       scrollX: true,
       click: true,
+      freeScroll: true,
+      eventPassthrough: 'vertical'
     });
   };
   useEffect(() => {

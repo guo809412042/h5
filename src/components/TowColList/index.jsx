@@ -41,13 +41,11 @@ function Index(props) {
         ? `${itemCount * itemW}px`
         : `${Math.ceil(itemCount / 2) * itemW}px`;
 
-    // const currenScreentWidth = parseFloat(context.current.offsetWidth);
-    // console.log(currenScreentWidth);
-    // const contextWidth = currenScreentWidth - paddingLeft;
-
     new BetterScroll(wrapper.current, {
       scrollX: true,
       click: true,
+      freeScroll: true,
+      eventPassthrough: 'vertical'
     });
   };
   useEffect(() => {
