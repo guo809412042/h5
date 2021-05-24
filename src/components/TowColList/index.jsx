@@ -1,11 +1,10 @@
 import React, { useEffect, createRef } from "react";
 import BetterScroll from "better-scroll";
-import Button from "../Button";
 import TowColItem from "../TowColItem";
 import styles from "./index.less";
 
 function Index(props) {
-  const { list } = props;
+  const { list, showIcon, setShowModelView } = props;
   const { data } = list;
   const listWrapper = createRef();
   const wrapper = createRef();
@@ -55,7 +54,9 @@ function Index(props) {
     <div className={styles.towColList}>
       <header className={styles.listHeader}>
         <div className={styles.title}>{list.title}</div>
-        <Button />
+        <button className={styles.xyButton} onClick={()=> 
+          setShowModelView(list)
+        }>GET</button>
       </header>
       <main ref={listWrapper} className={styles.itemContext}>
         <div className={styles.wrapper} ref={wrapper}>
@@ -64,7 +65,7 @@ function Index(props) {
             {data.length > 0
               ? data.map((item, index) => (
                   <li className={styles.item} key={index}>
-                    <TowColItem itemData={item} />
+                    <TowColItem itemData={item} showIcon={showIcon}/>
                   </li>
                 ))
               : ""}
