@@ -5,11 +5,45 @@
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(40px);
   mix-blend-mode: normal;
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
   & > .swiperWrapper {
-    background-color: royalblue;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 360px;
+    background-color: rosybrown;
+    height: 100px;
+    .item {
+      height: 100px;
+    }
+  }
+  .footer {
+    margin: 24px;
+    text-align: center;
+    & > .button {
+      margin-bottom: 26px;
+      border: none;
+      outline: none;
+      width: 272px;
+      height: 48px;
+      background: #ffbc21;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-feature-settings: "ss04" on, "ss01" on;
+      color: #15171a;
+    }
+    & > .pageIndex {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 26px;
+      color: #ffffff;
+    }
   }
 }

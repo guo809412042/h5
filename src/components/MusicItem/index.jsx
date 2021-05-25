@@ -1,24 +1,22 @@
-import React,{useEffect,useState} from "react";
+import React,{ useEffect, useState, createRef } from "react";
 import styles from "./index.less";
 function Index(props) {
   const { itemData } = props;
   const [timer, setTimer] = useState()
   const [isPlay, setIsPlay] = useState(false)
+  const audio = createRef();
   useEffect(()=>{
 
   },[]);
   const handleClick = () => {
-    const mp3 = document.getElementById('mp3')
-    
-    console.log(mp3.duration)
     setIsPlay(!isPlay)
     // 如果是播放状态的话
     if(isPlay){
       // 暂停
-      mp3.pause();
+      audio.current.pause();
     }else{
       // 继续播放
-      mp3.play();
+      audio.current.play();
     }
 
   }
@@ -26,7 +24,7 @@ function Index(props) {
     <div className={styles.musicItemWrapper}>
       <div className={styles.itemLeftView}>
         <div className={styles.audioWrapper}>
-          <audio src="../41813.mp3" id="mp3" controls style={{display:"none"}}></audio>
+          <audio src="../41813.mp3" ref={audio} controls style={{display:"none"}}></audio>
           <div className={styles.play} onClick={handleClick}>
             <span className={isPlay ? "iconfont icon-zanting" : "iconfont icon-bofang"}></span>
           </div>

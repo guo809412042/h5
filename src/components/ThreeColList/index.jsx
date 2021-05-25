@@ -5,7 +5,7 @@ import TransotionItem from "../TransotionItem";
 import styles from "./index.less";
 
 function Index(props) {
-  const { list, type } = props;
+  const { list, type, setShowModelView } = props;
   const itemContext = createRef();
   const wrapper = createRef();
   const context = createRef();
@@ -49,7 +49,9 @@ function Index(props) {
     <div className={styles.threeColList}>
       <header className={styles.listHeader}>
         <div className={styles.title}>{list.title}</div>
-        <button className={styles.xyButton} onClick={()=>console.log(11111)}>GET</button>
+        <button className={styles.xyButton} onClick={()=> 
+          setShowModelView(list)
+        }>GET</button>
       </header>
       <main className={styles.itemContext} ref={itemContext}>
         <div id="10" className={styles.wrapper} ref={wrapper}>

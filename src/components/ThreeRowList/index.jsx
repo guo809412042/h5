@@ -3,7 +3,7 @@ import BetterScroll from "better-scroll";
 import MusicItem from "../MusicItem";
 import styles from "./index.less";
 function Index(props) {
-  const { list } = props;
+  const { list, setShowModelView } = props;
   const { data } = list;
   const itemContext = createRef();
   const wrapper = createRef();
@@ -49,7 +49,9 @@ function Index(props) {
     <div className={styles.threeRowList}>
       <header className={styles.listHeader}>
         <div className={styles.title}>{list.title}</div>
-        <button className={styles.xyButton} onClick={()=>console.log(11111)}>GET</button>
+        <button className={styles.xyButton} onClick={()=> 
+          setShowModelView(list)
+        }>GET</button>
       </header>
       <main className={styles.itemContext} ref={itemContext}>
         <div className={styles.wrapper} ref={wrapper}>
