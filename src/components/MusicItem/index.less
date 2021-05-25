@@ -8,8 +8,14 @@
       width: 68px;
       height: 68px;
       border-radius: 6px;
-      background-color: steelblue;
+      background-color: #eee;
       position: relative;
+      img {
+        width: 68px;
+        height: 68px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
       & > .play {
         position: absolute;
         top: 50%;
@@ -21,6 +27,9 @@
         color: white;
         text-align: center;
         line-height: 16px;
+        & > span {
+          font-size: 14px;
+        }
       }
     }
   }

@@ -2,7 +2,23 @@ import React,{ useEffect, useState } from "react";
 import styles from "./index.less";
 function Index() {
   const [isPlay, setIsPlay] = useState(false);
+
+  const [im,seti] = useState()
   useEffect(() => {
+    // const video = document.getElementById('video')
+    // const canvas = document.createElement('canvas')
+    // const ctx = canvas.getContext('2d')
+    // video.onloadeddata = function (e){
+    //   console.log(this)
+    //   canvas.width = 100
+    //   canvas.height = 100
+    //   const width = this.vidieoWidth;
+    //   const heitght = this.vidieoHeight
+    //   ctx.drawImage(this,0,0, width,heitght)
+    //   console.log(ctx)
+    //   const src = canvas.toDataURL('image/jpeg');
+    //   seti(src)
+    // }
     
   })
   const handleClick = () => {
@@ -21,7 +37,8 @@ function Index() {
     <div className={styles.headerVideoViewWrapper}>
       <div className={styles.videoViewWrapper}>
         <div className={styles.videoWrapper} onClick={handleClick}>
-          <video src="../1111.mp4" id="video"
+          {/* "https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20200306%2F319d7254fa4545e9abec65a4a0d29790.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1624509964&t=971a89e7d2da4faec1cdfc15ded10f70" */}
+          <video src="../1111.mp4" id="video" poster="https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20200306%2F319d7254fa4545e9abec65a4a0d29790.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1624509964&t=971a89e7d2da4faec1cdfc15ded10f70"
               webkit-playsinline="true" playsInline={true} x5-playsinline=""
           ></video>
           {!isPlay ? <div className={styles.playIcon}>
@@ -32,7 +49,8 @@ function Index() {
       </div>
 
       <div className={styles.videoTextWrapper}>
-        <header className={styles.title}>asdasdasdasdasd🌞asdasdasdsd</header>
+        <header className={styles.title}>asdasdasdasdasd🌞asdasdasdsd
+        sdasdasdsd</header>
         <div className={styles.text}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
           consequatur saepe fugiat voluptates. Accusamus sint quia in voluptatem

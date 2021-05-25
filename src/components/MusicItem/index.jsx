@@ -24,9 +24,12 @@ function Index(props) {
     <div className={styles.musicItemWrapper}>
       <div className={styles.itemLeftView}>
         <div className={styles.audioWrapper}>
-          <audio src="../41813.mp3" ref={audio} controls style={{display:"none"}}></audio>
+          <div>
+             <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Ftva4.sinaimg.cn%2Flarge%2F006yt1Omgy1gd554s88yoj30nm0xc46p.jpg&refer=http%3A%2F%2Ftva4.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1624509964&t=c9a4c3bfad8ba6e031457ca23904b156" alt=""/>
+             <audio src="../41813.mp3" ref={audio} controls style={{display:"none"}}></audio>
+          </div>
           <div className={styles.play} onClick={handleClick}>
-            <span className={isPlay ? "iconfont icon-zanting" : "iconfont icon-bofang"}></span>
+            <span className={isPlay ? "iconfont icon-zhengzaibofang" : "iconfont icon-bofang"}></span>
           </div>
         </div>
       </div>
