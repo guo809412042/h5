@@ -8,8 +8,17 @@ function Index() {
   const img = createRef();
   // 初始化
   const init = async () => {
-    // 视频
+    // 设置视频尺寸
     if (video.current !== null) {
+      // 监听是否播放完成
+      video.current.addEventListener(
+        "ended",
+        function () {
+          setIsPlay(false);
+        },
+        false
+      );
+
       const videoW = video.current.offsetWidth;
       const videoH = video.current.offsetHeight;
       // 比例大于 一比一
@@ -33,7 +42,7 @@ function Index() {
       }
     }
 
-    // 图片
+    // 设置图片尺寸
     if (img.current !== null) {
       const imgDom = img.current;
       const media = mediaWrapper.current;
@@ -88,7 +97,7 @@ function Index() {
   return (
     <div className={styles.medieWrapper} ref={mediaWrapper}>
       {/* 加入判断条件 是图片还是视频 */}
-      {false ? (
+      {true ? (
         <div className={styles.videoWrapper} onClick={handleClick}>
           <video
             ref={video}

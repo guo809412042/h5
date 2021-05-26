@@ -27,13 +27,13 @@ function Index(props) {
     if (itemCount > 6) {
       maxContextH = itemH * maxRowCount;
       context.current.style.height = `${maxContextH}px`;
-      context.current.style.width = `${itemW * maxContextW + 0.5}px`;
+      context.current.style.width = `${Math.ceil(itemW * maxContextW) + 12}px`;
     } else {
       context.current.style.height = `${itemH}px`;
       if (itemCount > 3) {
         context.current.style.height = `${itemH * 2}px`;
       }
-      context.current.style.width = `${pageW}px`;
+      context.current.style.width = `${pageW + 12}px`;
     }
     new BetterScroll(wrapper.current, {
       scrollX: true,
@@ -62,6 +62,7 @@ function Index(props) {
             {list.data.length
               ? list.data.map((item, index) => (
                   <li key={index}>
+                    {/* 有一个判断条件来选择 循环遍历生产的组件 */}
                     {type === 1 ? (
                       <TransotionItem itemData={item} />
                     ) : (

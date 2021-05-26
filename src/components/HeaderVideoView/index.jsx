@@ -20,6 +20,15 @@ function Index() {
     //   const src = canvas.toDataURL('image/jpeg');
     //   seti(src)
     // }
+
+    // 监听是否播放完成
+    video.current.addEventListener(
+      "ended",
+      function () {
+        setIsPlay(false);
+      },
+      false
+    );
   });
   const handleClick = () => {
     setIsPlay(!isPlay);

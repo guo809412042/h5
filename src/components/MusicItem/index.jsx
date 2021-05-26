@@ -19,6 +19,13 @@ function Index(props) {
       // 设置时间字符串
       setTimer(timeStr);
     });
+    audio.current.addEventListener(
+      "ended",
+      function () {
+        setIsPlay(false);
+      },
+      false
+    );
 
     // console.log(audio.current.duration);
   });
