@@ -32,7 +32,7 @@ function Index(props) {
       maxRowH = itemH * itemCount;
       maxRowW = itemW;
     }
-    context.current.style.height = `${maxRowH}px`;
+    context.current.style.height = `${maxRowH + 0.5}px`;
     context.current.style.width = `${maxRowW}px`;
     new BetterScroll(wrapper.current, {
       scrollX: true,

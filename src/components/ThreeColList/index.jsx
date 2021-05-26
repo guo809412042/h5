@@ -27,7 +27,7 @@ function Index(props) {
     if (itemCount > 6) {
       maxContextH = itemH * maxRowCount;
       context.current.style.height = `${maxContextH}px`;
-      context.current.style.width = `${itemW * maxContextW}px`;
+      context.current.style.width = `${itemW * maxContextW + 0.5}px`;
     } else {
       context.current.style.height = `${itemH}px`;
       if (itemCount > 3) {
@@ -39,7 +39,7 @@ function Index(props) {
       scrollX: true,
       click: true,
       freeScroll: true,
-      eventPassthrough: 'vertical'
+      eventPassthrough: "vertical",
     });
   };
   useEffect(() => {
@@ -49,9 +49,12 @@ function Index(props) {
     <div className={styles.threeColList}>
       <header className={styles.listHeader}>
         <div className={styles.title}>{list.title}</div>
-        <button className={styles.xyButton} onClick={()=> 
-          setShowModelView(list)
-        }>GET</button>
+        <button
+          className={styles.xyButton}
+          onClick={() => setShowModelView(list)}
+        >
+          GET
+        </button>
       </header>
       <main className={styles.itemContext} ref={itemContext}>
         <div id="10" className={styles.wrapper} ref={wrapper}>

@@ -37,6 +37,7 @@ function Index() {
     if (img.current !== null) {
       const imgDom = img.current;
       const media = mediaWrapper.current;
+      // 获取图片的尺寸
       const { imgW, imgH } = await getImageSize(img.current);
       // 比例大于 一比一
       if (imgH / imgW > 1) {
