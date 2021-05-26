@@ -11,9 +11,9 @@ function Index(props) {
   const context = createRef();
   const init = () => {
     // 计算padding
-    const paddingLeft = parseFloat(
-      getComputedStyle(listWrapper.current)["paddingLeft"]
-    );
+    // const paddingLeft = parseFloat(
+    //   getComputedStyle(listWrapper.current)["paddingLeft"]
+    // );
     // 拿到所有的item元素
     const itemS = context.current.children;
     // 子元素的个数
@@ -44,28 +44,31 @@ function Index(props) {
       scrollX: true,
       click: true,
       freeScroll: true,
-      eventPassthrough: 'vertical'
+      eventPassthrough: "vertical",
     });
   };
   useEffect(() => {
     init();
-  });
+  }, []);
   return (
-    <div className={styles.towColList}>
+    <div className={`${styles.towColList}`}>
       <header className={styles.listHeader}>
         <div className={styles.title}>{list.title}</div>
-        <button className={styles.xyButton} onClick={()=> 
-          setShowModelView(list)
-        }>GET</button>
+        <button
+          className={styles.xyButton}
+          onClick={() => setShowModelView(list)}
+        >
+          GET
+        </button>
       </header>
-      <main ref={listWrapper} className={styles.itemContext}>
+      <main ref={listWrapper} className={`${styles.itemContext} towColWrapper`}>
         <div className={styles.wrapper} ref={wrapper}>
           <ul className={styles.context} ref={context}>
             {/* <li className={styles.item}></li> */}
             {data.length > 0
               ? data.map((item, index) => (
                   <li className={styles.item} key={index}>
-                    <TowColItem itemData={item} showIcon={showIcon}/>
+                    <TowColItem itemData={item} showIcon={showIcon} />
                   </li>
                 ))
               : ""}

@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./pages/Home";
+// import App from "./components/ModelView/components/BigView";
+
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(

@@ -13,8 +13,7 @@ function Index(props) {
     let maxRowH;
     let maxRowW;
     const maxRowCount = 3;
-    const padding =
-      parseFloat(getComputedStyle(itemContext.current)["paddingLeft"]) * 2;
+    // const padding = parseFloat(getComputedStyle(itemContext.current)["paddingLeft"]) * 2;
 
     // 拿到所有的item元素
     const itemS = context.current.children;
@@ -39,7 +38,7 @@ function Index(props) {
       scrollX: true,
       click: true,
       freeScroll: true,
-      eventPassthrough: 'vertical'
+      eventPassthrough: "vertical",
     });
   };
   useEffect(() => {
@@ -49,9 +48,12 @@ function Index(props) {
     <div className={styles.threeRowList}>
       <header className={styles.listHeader}>
         <div className={styles.title}>{list.title}</div>
-        <button className={styles.xyButton} onClick={()=> 
-          setShowModelView(list)
-        }>GET</button>
+        <button
+          className={styles.xyButton}
+          onClick={() => setShowModelView(list)}
+        >
+          GET
+        </button>
       </header>
       <main className={styles.itemContext} ref={itemContext}>
         <div className={styles.wrapper} ref={wrapper}>

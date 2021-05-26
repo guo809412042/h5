@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./index.less";
 function Index(props) {
-  const { setShowShare } = props
+  // const { setShowShare } = props
   return (
     <div className={styles.xyHeaderBar}>
       <header className={styles.headerWrapper}>
